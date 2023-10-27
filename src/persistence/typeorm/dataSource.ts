@@ -1,3 +1,4 @@
+import { Task } from "../../domain/entities/Task.entity";
 import { DataSource } from "typeorm";
 
 export const AppDataSource = new DataSource({
@@ -9,7 +10,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME_TASK,
   synchronize: false,
   logging: true,
-  entities: ['dist/**/*.entity{.ts,.js}'],  
+  entities: [Task],  
   subscribers: [],
   migrations: ["src/**/migrations/*.{js,ts}"],
 });
